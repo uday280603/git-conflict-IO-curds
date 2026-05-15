@@ -1,1 +1,10 @@
-<p>todo-form works!</p>
+<div class="card">
+    <div class="card-body">
+      <div class="form-group">
+        <label for="todoItem">TodoItem</label>
+        <input type="text"  #todoItem class="form-control">
+      </div>
+      <button *ngIf="!isInEditMode" class="btn btn-block btn-primary">Edit</button>
+        <button *ngIf="isInEditMode" class="btn btn-block btn-warning">Update</button>
+    </div>
+</div>

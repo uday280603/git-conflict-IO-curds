@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoFormComponent implements OnInit {
 
+  isInEditMode : boolean  = false;
+
   constructor() { }
 
   ngOnInit(): void {
