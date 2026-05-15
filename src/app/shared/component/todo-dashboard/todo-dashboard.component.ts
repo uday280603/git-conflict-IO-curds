@@ -16,8 +16,10 @@ export class TodoDashboardComponent implements OnInit {
   ngOnInit(): void {
 
     this.todoArr = todoData
+  }
 
-
+  getnewTodo(todo: Itodo){
+    this.todoArr.unshift(todo)
   }
 
 }
