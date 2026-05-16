@@ -4,11 +4,8 @@
         <label for="todoItem">TodoItem</label>
         <input type="text"  #todoItem class="form-control">
       </div>
-      <button *ngIf="!isInEditMode" class="btn btn-block btn-primary">Add Todo</button>
+      <button *ngIf="!isInEditMode" class="btn btn-block btn-primary"  (click)="onAdd()">Add Todo</button>
         <button *ngIf="isInEditMode" class="btn btn-block btn-warning" (click)="onUpdateTodo()">Update</button>
-      <button
-      (click)="onAdd()"
-      *ngIf="!isInEditMode" class="btn btn-block btn-primary">Add</button>
-        <button *ngIf="isInEditMode" class="btn btn-block btn-warning">Update</button>
+      
     </div>
 </div>

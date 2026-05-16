@@ -9,8 +9,8 @@ import {
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
-import { Itodo } from '../../models/Itodo';
-import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+// import { Itodo } from '../../models/Itodo';
+// import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { Itodo } from '../../models/Itodo';
 
 @Component({
@@ -25,6 +25,9 @@ export class TodoFormComponent implements OnInit, OnChanges {
   @ViewChild('todoItem') todoItem!: ElementRef;
 
   @Output() emitUpdatedObj : EventEmitter<Itodo> = new EventEmitter<Itodo>()
+  
+  @Output() emitnewTodo : EventEmitter<Itodo> = new EventEmitter<Itodo>()
+  // emitnewTodo: any;
 
   constructor() {}
   ngOnChanges(changes: SimpleChanges): void {
@@ -48,15 +51,15 @@ export class TodoFormComponent implements OnInit, OnChanges {
 
 
   }
-export class TodoFormComponent implements OnInit {
+// export class TodoFormComponent implements OnInit {
 
-  isInEditMode : boolean  = false;
-  @ViewChild('todoItem') todoItem !: ElementRef
-  @Output() emitnewTodo : EventEmitter<Itodo> = new EventEmitter<Itodo>()
+//   isInEditMode : boolean  = false;
+//   @ViewChild('todoItem') todoItem !: ElementRef
+//   @Output() emitnewTodo : EventEmitter<Itodo> = new EventEmitter<Itodo>()
 
-  constructor() { }
-  ngOnInit(): void {
-  }
+//   constructor() { }
+//   ngOnInit(): void {
+//   }
 
   onAdd(){
     let todoVal = this.todoItem.nativeElement.value
