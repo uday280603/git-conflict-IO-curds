@@ -10,6 +10,7 @@ import { todoData } from '../../const/Itodo';
 export class TodoDashboardComponent implements OnInit {
 
   todoArr !: Itodo[];
+  editObjToPatch !: Itodo;
 
   constructor() { }
 
@@ -20,6 +21,17 @@ export class TodoDashboardComponent implements OnInit {
 
   getnewTodo(todo: Itodo){
     this.todoArr.unshift(todo)
+  }
+
+  getEditTodo(editObj : Itodo){
+
+    this.editObjToPatch = editObj;
+
+  }
+
+  getUpdatedObj(updatedObj:Itodo){
+    let getIndex = this.todoArr.findIndex(t => t.todoId === updatedObj.todoId);
+    this.todoArr[getIndex] = updatedObj;
   }
 
 }

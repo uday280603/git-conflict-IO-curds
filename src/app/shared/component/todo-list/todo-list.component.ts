@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Itodo } from '../../models/Itodo';
 
 @Component({
@@ -10,9 +10,17 @@ export class TodoListComponent implements OnInit {
 
   @Input()  getAllTodo!: Itodo[];
 
+  @Output() emitEditObj : EventEmitter<Itodo>  = new EventEmitter<Itodo>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onEditTodo(editTodo : Itodo){
+
+    this.emitEditObj.emit(editTodo)
+
   }
 
 }
